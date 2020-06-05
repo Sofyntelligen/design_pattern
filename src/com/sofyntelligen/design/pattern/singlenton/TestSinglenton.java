@@ -13,6 +13,15 @@ public class TestSinglenton {
 
         System.out.println("################");
         System.out.println(studentB.toString());   
+        
+        Student studentAA = Student.getSingletonInstance("Daniel", "Osorio", "Facultad de Ingenieria");
+        
+        try{
+        	Student studentBB = studentAA.clone();
+            System.out.println(studentBB.getName());
+        }catch (NullPointerException ex){
+            ex.printStackTrace();
+        }
     }
 
 }
